@@ -1,0 +1,59 @@
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+startup: {type: form, module: Homepage}
+package_name: News_app
+allow_embedding: true
+name: News App
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: ArticleEdit
+db_schema:
+- name: articles
+  id: 127311
+  python_name: articles
+  columns:
+    ++qAUiRNmew=:
+      name: updated
+      type: datetime
+      admin_ui: {order: 4, width: 200}
+    CCIOZryZAW0=:
+      name: created
+      type: datetime
+      admin_ui: {order: 3, width: 200}
+    ImGgQphBEcY=:
+      name: image
+      type: media
+      admin_ui: {order: 2, width: 200}
+    MlV7CrZBV+A=:
+      name: category
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 5, width: 200}
+      table_id: 127312
+    RFGFAsmaP7A=:
+      name: content
+      type: string
+      admin_ui: {order: 1, width: 200}
+    _D7pO2N5tfc=:
+      name: hyperlink
+      type: string
+      admin_ui: {order: 6, width: 200}
+    mhV7vKWdMDg=:
+      name: title
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: articles, app_id: D4UVGUKZIIPSATY5, server: full, client: none,
+    table_mapping_name: null, table_mapping_id: null, table_id: 127311}
+- name: categories
+  id: 127312
+  python_name: categories
+  columns:
+    LtGNI_i06lk=:
+      name: name
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: categories, app_id: D4UVGUKZIIPSATY5, server: full, client: search,
+    table_mapping_name: null, table_mapping_id: null, table_id: 127312}
+renamed: true

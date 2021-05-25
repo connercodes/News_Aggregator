@@ -1,0 +1,103 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Title:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'IWTDYI,YOJYJP'}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: title_box,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: title_box
+  layout_properties: {grid_position: 'IWTDYI,VVUDYV'}
+  data_bindings:
+  - {property: text, code: 'self.item[''title'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Content:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'MWTXCX,ROMUUS'}
+- type: TextArea
+  properties: {role: null, align: left, height: '', tooltip: '', placeholder: content_box,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: content_box
+  layout_properties: {grid_position: 'MWTXCX,TNRDSN'}
+  data_bindings:
+  - {property: text, code: 'self.item[''content'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Category:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'HTEDCU,LRYHLD'}
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: choose category
+    border: ''
+    enabled: true
+    foreground: ''
+    items: []
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: true
+  name: category_box
+  layout_properties: {grid_position: 'HTEDCU,ZIAXOF'}
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''category'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Image:', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_4
+  layout_properties: {grid_position: 'YCQKPB,CDOFOD'}
+- type: FileLoader
+  properties:
+    role: null
+    show_state: true
+    align: center
+    tooltip: ''
+    border: ''
+    file_types: ''
+    enabled: true
+    files: []
+    foreground: ''
+    visible: true
+    text: Upload
+    font_size: null
+    font: ''
+    spacing_above: small
+    icon_align: left
+    spacing_below: small
+    italic: false
+    file: null
+    background: ''
+    bold: false
+    underline: false
+    multiple: false
+    icon: fa:upload
+  name: image_uploader
+  layout_properties: {grid_position: 'YCQKPB,NOYRLP'}
+  event_bindings: {change: image_uploader_change}
+is_package: true
